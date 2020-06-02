@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  {% if results %}
+  <div class="book-search-div">
+    {% for book in results  %}
+      <div id="book-search-card">
+        <img src="{{ book.image.url }}">
+        <div>
+          <p>{{ book.title }} - {{ book.author }}</p>
+          <p>{{ book.category }}</p>
+          <br>
+          <a href="{{ book.get_absolute_url }}">Get Details</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p id="no-result-search">No book with this title.</p>
+  {% endif %}
+{% endblock %}

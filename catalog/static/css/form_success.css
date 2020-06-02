@@ -1,0 +1,18 @@
+#form-success{
+    text-align: center;
+    margin:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+#form-success>h1{
+    color: #343a40;
+    margin:20px;
+}
+#form-success>a{
+    color:#fff;
+    background-color: #343a40;
+    margin:10px;
+    padding: 10px 20px;
+    border:none;
+    text-decoration: none;
+}

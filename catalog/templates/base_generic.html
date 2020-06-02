@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Techbooks</title>{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base_generic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/request_form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/review_form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/book_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/book_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form_success.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+</head>
+<body>
+    <div id="navigation">
+    {% block sidebar %}
+            <a href="javascript:" onclick="closeMenu()">Close Menu &olcross;</a>
+            <a href="{% url 'category' %}">Home</a>
+            <a href="{% url 'books' %}">All Books</a>
+            <a href="{% url 'book-request' %}">Request EBook</a>
+            <a href="{% url 'review-form' %}">Post Book Review</a>
+    {% endblock %}
+    </div>
+    <div class="header-content">
+    {% block header %}
+            <a href="javascript:" id="menu-btn" onclick="openMenu()"><img src="https://img.icons8.com/color/48/000000/squared-menu.png"></a>
+            <a href="{% url 'category' %}">TECHBOOKS</a>
+            <form id="searchbar" action="{% url 'book-search-list-view' %}" method="get" accept-charset="utf-8">
+                <input required type="text" placeholder="Search Books..." id="search-field" name="q">
+                <button type="submit" class="search-btn"><img src="https://img.icons8.com/pastel-glyph/64/000000/search--v2.png"></button>
+            </form>
+
+    
+    {% endblock %}
+    </div>
+    <div class="main" id="main">
+    {% block content %}
+    {% endblock %}
+    </div>
+    
+    <script>
+        function openMenu(){
+          document.getElementById("navigation").style.width="250px";
+          document.getElementById("main").style.opacity = "0.5";
+          }
+          
+          function closeMenu(){
+          document.getElementById("navigation").style.width="0";
+          document.getElementById("main").style.opacity = "1";
+          }
+        </script>
+</body>
+</html>

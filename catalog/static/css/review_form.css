@@ -1,0 +1,121 @@
+.review-form-div{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/static/Images/bg-request.jpg");
+    background-position: center;
+}
+#review-form{
+    color: #000;
+    height:70vh;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: baseline;
+    padding:100px;
+}
+#review-form>h4{
+    background-color: #000;
+    padding:5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom:30px;
+    color:#fff;
+}
+#review-form>p{
+    margin: 20px;
+}
+#review-form>p>label{
+    font-size:0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+}
+#review-form>p>input{
+    color:#000;
+    background: none;
+    margin-left:10px;
+    font-size: 1rem;
+    padding-left: 1px;
+    width:300px;
+    margin-left:20px;
+    border:none;
+    border-bottom: solid thin #777;
+    outline: none;
+}
+#review-form>p>input:active{
+    background-color: none;
+}
+#id_book_linked{
+    background: none;
+}
+#id_text{
+    color:#000;
+    width:500px;
+    height:250px;
+    position: relative;
+    left:30px;
+    background:none;
+    border:solid thin #777;
+}
+#review-form>button{
+    padding:10px 20px;
+    border:solid thin #000;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background: none;
+    margin:20px;
+    color:#000;
+}
+#review-form-info{
+    height:70vh;
+    border-left:solid thin #777;
+    padding:100px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+#review-form-info>div{
+    width:70%;
+}
+#review-form-info>div>h1{
+    font-size: 1.2rem;
+    font-weight:900;
+    color:#000;
+}
+#review-form-info>div>p{
+    margin:30px 0;
+    text-align: left;
+    font-size: 1.2rem;
+    color:#000;
+    font-weight: 400;
+}
+
+@media only screen and (max-width:480px){
+    .review-form-div{
+        flex-flow: column nowrap;
+    }
+    #review-form{
+        padding:10px;
+        height:100vh;
+    }
+    #review-form>p{
+        margin:10px;
+    }
+    #review-form>p>input{
+        width:200px;
+    }
+    #id_text{
+        width:300px;
+        height:150px;
+    }
+    #review-form-info{
+        padding: 5px 20px;
+        border-left:none;
+    }
+}

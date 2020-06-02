@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+    <img src="{% static 'Images/bg_12.jpg' %}" alt="background">
+    <h2>Browse Catalog</h2>
+    {% if category_list %}
+    <div class="card-div">
+        {% for category in category_list %}
+        <div id="card">
+            <img src="{{ category.icon.url }}">
+            <h4>{{ category.name }}</h4>
+            <a href="{{ category.get_absolute_url }}">Explore &#10230;</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>There are no categories.</p>
+    {% endif %}
+    </div>
+ 
+
+    <div class="footer">
+        <div class="footer-work">
+            <p><strong>Get Source Code</strong></p>
+            <a href="https://github.com/snghnishant" target="_blank" title="Github"><img src="https://img.icons8.com/ios-filled/30/000000/github.png"/>Github</a>
+        </div>
+        <div class="footer-nav">
+            <p><strong>Website Links</strong></p>
+            <a href="{% url 'category' %}">Home</a>
+            <a href="{% url 'books' %}">All Books</a>
+            <a href="{% url 'book-request' %}">Request Ebook</a>
+            <a href="{% url 'review-form' %}">Post Review</a>
+        </div>
+        <div class="footer-contact">
+            <p><strong>Contact Us</strong></p>
+            <p>Send your business queries</p>
+            <button class="myBtn" onclick="location.href='mailto:nsr291998@gmail.com'">Send Mail</button>
+        </div>
+    </div>
+{% endblock %}

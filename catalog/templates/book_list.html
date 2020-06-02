@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>Book List</h2>
+  <div class="book-list">
+    {% if book_list %}
+    <table id="book-list-table">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Publication date</th>
+            </tr>
+            {% for book in book_list %}
+            <tr>
+                <td><a href="{{ book.get_absolute_url }}">{{book.title}}</a></td>
+                <td>{{book.author}}</td>
+                <td>{{book.category}}</td>
+                <td>{{book.published}}</td>
+            </tr>
+            {% endfor %}
+            <caption>
+                More titles to be added. Check back soon...
+            </caption>
+    </table>
+    {% else %}
+      <p>There are no books in the library right now.</p>
+    {% endif %}       
+{% endblock %}

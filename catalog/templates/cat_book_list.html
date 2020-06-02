@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+    <h2>{{ category }}</h2>
+    <div class="book-list">
+        {% if category.book_set.all %}
+        <table id="book-list-table">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Published On</th>
+                </tr>
+                {% for book in category.book_set.all %}
+                <tr>
+                    <td><a href="{% url 'book-detail' book.pk %}">{{book.title}}</a></td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.publication}}</td>
+                    <td>{{book.published}}</td>
+                </tr>
+                {% endfor %}
+                <caption>
+                    More titles to be added. Check back soon...
+                </caption>
+                
+        </table>
+        {% else %}
+            <p>No books currently in this category <strong>:(</strong><br><br>Check back soon...</p>
+        {% endif %}
+    </div>
+    {% endblock %}

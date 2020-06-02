@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<div class="review-form-div">
+    <form method="post" id="review-form" autocomplete="off">
+        <h4>Leave a Review</h4>
+        {% csrf_token %}
+        {{ review_form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <div id="review-form-info">
+        <div>
+        <h1>Give Feedback?</h1>
+        <p>If you want to share your experience with our books, send your valuable review here. <br><br>
+            Have a good day...</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

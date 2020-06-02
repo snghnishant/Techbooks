@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %} 
+{% load static %}
+{% block content %}
+<div class="book-detail-card">
+    <img src="{{ book.image.url }}">
+    <div>
+        <h1>{{ book.title }}</h1>
+        <h3>ISBN: {{ book.isbn }}</h3>
+        <h3>Author: {{ book.author }}</h3>
+        <h4>{{book.publication}} Publications, Published On: {{ book.published }}</h4>
+        <a id="pdf-download" href="{{ book.pdffile.url }}" target="_blank">Download PDF</a>
+    </div>
+</div>
+
+<div class="review-list">
+  <p>User Reviews</p>
+   {% for review in reviews %}
+        <div>
+          <h3>
+            {{ review.name }} on
+            <span>
+              {{ review.posted_on }}
+            </span>
+          </h3>
+          <p>{{ review.text | linebreaks }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+<div class="request-form-div">
+    <form method="post" id="request-form" autocomplete="off">
+        <h4>Request an Ebook</h4>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <div id="request-form-info">
+        <div>
+        <h1>Can't find a book?</h1>
+        <p>You can send us a request in order to serve you better with more content. <br><br>
+            Have a good day...</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

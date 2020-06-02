@@ -1,0 +1,64 @@
+.book-list{
+    display:flex;
+    justify-content: center;
+}
+table{
+    width:50vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+th{
+    background-color: #000;
+    width: 200px;
+    padding:10px 0;
+    font-size:0.9rem;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color:#fff;
+}
+td{
+    padding-left: 10px;
+    text-align: left;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+td>a{
+    text-decoration: none;
+    color:#dc3545;
+}
+caption{
+    font-size: 0.8rem;
+    margin:15px;
+}
+.book-list>p{
+    text-align: center;
+    color:#dc3545;
+}
+
+@media only screen and (max-width:480px){
+    table{
+        width: 100vw;
+        border-spacing: 8px;
+    }
+    th{ 
+        text-align: left;
+        letter-spacing: 0;
+        font-weight: bold;
+        border:none;
+        color:rgba(52,58,64,1);
+        background: none;
+        width:auto;
+        padding:2px;
+    }
+    td{
+        padding-left:0;
+        font-size: 1rem;
+    }
+    td>img{
+        width:18px;
+    }
+}
